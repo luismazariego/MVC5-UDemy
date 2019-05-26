@@ -1,0 +1,92 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <table class="table-bordered">
+        <thead class="alert-info">
+        <tr>
+            <th>Currency Note</th>
+            <th>Count</th>
+            <th>=</th>
+            <th>Actual Value</th>
+        </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.oneThousand != 0)
+            {
+                <tr>
+                    <td><img class="img-fluid" src="~/onethousand.jpg" /></td>
+                    <td>@ViewBag.oneThousand</td>
+                    <td>=</td>
+                    <td>@(ViewBag.oneThousand * 1000)</td>
+                </tr>
+            }
+            @if (ViewBag.fiveHundred != 0)
+            {
+                <tr>
+                    <td><img class="img-fluid" src="~/fivehundred.jpg" /></td>
+                    <td>@ViewBag.fiveHundred</td>
+                    <td>=</td>
+                    <td>@(ViewBag.fiveHundred * 500)</td>
+                </tr>
+            }
+            @if (ViewBag.oneHundred != 0)
+            {
+                <tr>
+                    <td><img class="img-fluid" src="~/onehundred.jpg" /></td>
+                    <td>@ViewBag.oneHundred</td>
+                    <td>=</td>
+                    <td>@(ViewBag.oneHundred * 100)</td>
+                </tr>
+            }
+            @if (ViewBag.fifty != 0)
+            {
+                <tr>
+                    <td><img class="img-fluid" src="~/fifty.jpg" /></td>
+                    <td>@ViewBag.fifty</td>
+                    <td>=</td>
+                    <td>@(ViewBag.fifty * 50)</td>
+                </tr>
+            }
+            @if (ViewBag.ten != 0)
+             {
+                 <tr>
+                     <td><img class="img-fluid" src="~/ten.jpg" /></td>
+                     <td>@ViewBag.ten</td>
+                     <td>=</td>
+                     <td>@(ViewBag.ten * 10)</td>
+                 </tr>
+             }
+            @if (ViewBag.five != 0)
+            {
+                <tr>
+                    <td><img class="img-fluid" src="~/five.jpg" /></td>
+                    <td>@ViewBag.five</td>
+                    <td>=</td>
+                    <td>@(ViewBag.five * 5)</td>
+                </tr>
+            }
+            @if (ViewBag.one != 0)
+            {
+                <tr>
+                    <td><img class="img-fluid" src="~/one.jpg" /></td>
+                    <td>@ViewBag.one</td>
+                    <td>=</td>
+                    <td>@(ViewBag.one * 1)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

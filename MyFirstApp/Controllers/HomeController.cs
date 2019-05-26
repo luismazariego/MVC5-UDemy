@@ -50,5 +50,38 @@ namespace MyFirstApp.Controllers
             return File(fileName, "application/pdf");
             //return View();
         }
+
+        public ActionResult EmpFacebookPage(int EmpId)
+        {
+            var employees = new[]
+            {
+                new {EmpId = 1, EmpName = "Scott", Salary = 8000},
+                new {EmpId = 1, EmpName = "Smith", Salary = 2540},
+                new {EmpId = 1, EmpName = "Allen", Salary = 9400},
+            };
+
+            string fbUrl = null;
+
+            foreach (var item in employees)
+            {
+                if(item.EmpId == EmpId)
+                    fbUrl = "http://www.facebook.com/emp" + EmpId;
+            }
+
+            if (fbUrl == null)
+                return Content("Invalid employee id");
+
+            return Redirect(fbUrl);
+        }
+
+        public ActionResult StudentDetails()
+        {
+            ViewBag.StudentId = 101;
+            ViewBag.StudentName = "Scott";
+            ViewBag.Marks = 50;
+            ViewBag.NoOfSemesters = 6;
+            ViewBag.Subjects = new List<string>() {"Math", "Physics", "Chemistry"};
+            return View();
+        }
     }
 }
